@@ -92,31 +92,31 @@ sight3 = Sight.new({
   "city_id" => city3.id
   })
 
-  city3.save()
+  sight3.save()
 
 visit1 = Visit.new({
-  "city_id" => city1.id,
-  "sight_id" => sight1.id,
   "visit_date" => "22.08.17",
-  "url" => "/louvre.jpg"
+  "url" => "/louvre.jpg",
+  "sight_id" => sight1.id,
+  "city_id" => city1.id
   })
 
   visit1.save()
 
 visit2 = Visit.new({
-  "city_id" => city2.id,
-  "sight_id" => sight2.id,
   "visit_date" => "15.05.18",
-  "url" => "/nairobi_national_park.jpg"
+  "url" => "/nairobi_national_park.jpg",
+  "sight_id" => sight2.id,
+  "city_id" => city2.id
   })
 
   visit2.save()
 
 visit3 = Visit.new({
-  "city_id" => city3.id,
-  "sight_id" => sight3.id,
   "visit_date" => "03.10.19",
-  "url" => "/red_fort.jpg"
+  "url" => "/red_fort.jpg",
+  "sight_id" => sight3.id,
+  "city_id" => city3.id
   })
 
   visit3.save()

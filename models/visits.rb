@@ -15,7 +15,7 @@ class Visit
   end
 
   def save()
-  sql = "INSERT INTO cities
+  sql = "INSERT INTO visits
   (
     visit_date,
     url,

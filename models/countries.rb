@@ -20,9 +20,9 @@ class Country
       $1, $2
       )
       RETURNING id"
-      values = [@name]
-  country = SqlRunner.run(sql, values).first
-  @id = country['id'].to_i
+      values = [@name, @continent_id]
+    country = SqlRunner.run(sql, values).first
+    @id = country['id'].to_i
   end
 
   def self.delete_all()
