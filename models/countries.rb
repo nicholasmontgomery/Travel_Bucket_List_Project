@@ -25,6 +25,22 @@ class Country
     @id = country['id'].to_i
   end
 
+  def continent()
+    sql = "SELECT * FROM continents WHERE id = $1"
+    values = [@continent_id]
+    results = SqlRunner.run(sql, values)
+    country_continent = results[0]
+    continent = Continent.new(country_continent)
+    return continent
+  end
+
+  def self.all()
+    sql = "SELECT * FROM countries"
+    countries = SqlRunner.run(sql)
+    result = countries.map{ |country| Country.new(country)}
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM countries;"
     SqlRunner.run(sql)

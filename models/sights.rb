@@ -25,6 +25,13 @@ class Sight
   @id = sight['id'].to_i
 end
 
+def self.all()
+  sql = "SELECT * FROM sights"
+  sights = SqlRunner.run(sql)
+  result = sights.map{ |sight| Sight.new(sight)}
+  return result
+end
+
 def self.delete_all()
       sql = "DELETE FROM sights;"
       SqlRunner.run(sql)
