@@ -50,3 +50,73 @@ country3 = Country.new({
   })
 
   country3.save()
+
+city1 = City.new({
+  "name" => "Paris"
+  "country_id" => country1.id
+  })
+
+  city1.save()
+
+city2 = City.new({
+  "name" => "Nairobi"
+  "country_id" => country2.id
+  })
+
+  city2.save()
+
+city3 = City.new({
+  "name" => "New Delhi"
+  "country_id" => country3.id
+  })
+
+  city3.save()
+
+
+sight1 = Sight.new({
+  "name" => "Louvre Museum"
+  "city_id" => city1.id
+  })
+
+  sight1.save()
+
+sight2 = Sight.new({
+  "name" => "Nairobi National Park"
+  "city_id" => city2.id
+  })
+
+  sight2.save()
+
+sight3 = Sight.new({
+  "name" => "Red Fort"
+  "city_id" => city3.id
+  })
+
+  city3.save()
+
+visit1 = Visit.new({
+  "city_id" => city1.id
+  "sight_id" => sight1.id
+  "date" => "22.08.17"
+  "url" => "/louvre.jpg"
+  })
+
+  visit1.save()
+
+visit2 = Visit.new({
+  "city_id" => city2.id
+  "sight_id" => sight2.id
+  "date" => "15.05.18"
+  "url" => "/nairobi_national_park.jpg"
+  })
+
+  visit2.save()
+
+visit3 = Visit.new({
+  "city_id" => city3.id
+  "sight_id" => sight3.id
+  "date" => "03.10.19"
+  "url" => "/red_fort.jpg"
+  })
+
+  visit3.save()
