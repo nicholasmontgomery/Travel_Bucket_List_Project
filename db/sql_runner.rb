@@ -10,4 +10,4 @@ class SqlRunner
     end
     return result
   end
-endb
+end

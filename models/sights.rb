@@ -1,32 +1,32 @@
 require_relative('../db/sql_runner')
 
-class City
+class Sight
 
   attr_reader :id
-  attr_accessor :name, :country_id
+  attr_accessor :name, :city_id
 
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
-    @country_id = options['country_id']
+    @city_id = options['city_id']
   end
 
   def save()
-  sql = "INSERT INTO cities
+  sql = "INSERT INTO sights
   (
     name,
-    country_id
+    city_id
     ) VALUES (
       $1, $2
       )
       RETURNING id"
-      values = [@name, @country_id]
-  city = SqlRunner.run(sql, values).first
-  @id = city['id'].to_i
+      values = [@name, @city_id]
+  sight = SqlRunner.run(sql, values).first
+  @id = sight['id'].to_i
 end
 
 def self.delete_all()
-      sql = "DELETE FROM cities;"
+      sql = "DELETE FROM sights;"
       SqlRunner.run(sql)
   end
 

@@ -29,8 +29,8 @@ CREATE TABLE sights (
 
 CREATE TABLE visits (
   id SERIAL PRIMARY key,
-  date varchar(255),
-  url(TEXT),
-  sight_id INT REFERENCES sightss(id) NOT NULL,
+  visit_date varchar(255),
+  url text,
+  sight_id INT REFERENCES sights(id) NOT NULL,
   city_id INT REFERENCES cities(id) NOT NULL
 );
