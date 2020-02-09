@@ -30,6 +30,39 @@ class Visit
   @id = visit['id'].to_i
 end
 
+  def sight()
+    sql = "SELECT * FROM sights WHERE id = $1"
+    values= [@sight_id]
+    results = SqlRunner.run(sql, values)
+    visit_sight = results[0]
+    sight = Sight.new(visit_sight)
+    return sight
+  end
+
+  def city()
+    sql = "SELECT * FROM cities WHERE id = $1"
+    values= [@city_id]
+    results = SqlRunner.run(sql, values)
+    visit_city = results[0]
+    city = City.new(visit_city)
+    return city
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM students WHERE id = $1"
+    values = [id]
+    student = SqlRunner.run(sql, values)
+    result = Student.new(student.first)
+    return result
+  end
+
+  def self.all()
+    sql = "SELECT * FROM students"
+    students = SqlRunner.run(sql)
+    result = students.map{ |student| Student.new(student)}
+    return result
+  end
+
 def self.delete_all()
       sql = "DELETE FROM visits;"
       SqlRunner.run(sql)

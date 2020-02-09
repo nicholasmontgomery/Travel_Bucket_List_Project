@@ -120,3 +120,6 @@ visit3 = Visit.new({
   })
 
   visit3.save()
+
+  binding.pry
+  nil
