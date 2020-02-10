@@ -9,7 +9,7 @@ require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
 get '/visited' do
-  @cities = City.all
+  @cities = City.visited
   @continents = Continent.all
   @countries = Country.all
   @sights = Sight.all

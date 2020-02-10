@@ -53,6 +53,7 @@ country3 = Country.new({
 
 city1 = City.new({
   "name" => "Paris",
+  "visited" => true,
   "country_id" => country1.id
   })
 
@@ -60,6 +61,7 @@ city1 = City.new({
 
 city2 = City.new({
   "name" => "Nairobi",
+  "visited" => true,
   "country_id" => country2.id
   })
 
@@ -67,11 +69,27 @@ city2 = City.new({
 
 city3 = City.new({
   "name" => "New Delhi",
+  "visited" => true,
   "country_id" => country3.id
   })
 
   city3.save()
 
+  city4 = City.new({
+    "name" => "Lyon",
+    "visited" => false,
+    "country_id" => country1.id
+    })
+
+    city4.save()
+
+  city5 = City.new({
+    "name" => "Goa",
+    "visited" => false,
+    "country_id" => country3.id
+    })
+
+    city5.save()
 
 sight1 = Sight.new({
   "name" => "Louvre Museum",

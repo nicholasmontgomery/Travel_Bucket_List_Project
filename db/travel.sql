@@ -18,7 +18,9 @@ CREATE TABLE countries (
 CREATE TABLE cities (
   id SERIAL PRIMARY key,
   name varchar(255),
+  visited boolean,
   country_id INT REFERENCES countries(id) NOT NULL
+
 );
 
 CREATE TABLE sights (
