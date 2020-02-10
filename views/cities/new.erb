@@ -1,0 +1,25 @@
+<h1>Create a new city</h1>
+
+<form action="/cities" method="post">
+  <label for="name">City name:</label>
+    <input id="name" type="text" name="name" />
+
+    <label>
+      Select a country:
+      <select name="country_id">
+        <% for country in @countries %>
+        <option value="<%= country.id %>"><%= country.name %></option>
+        <% end %>
+      </select>
+    </label>
+
+    <p>Tick if this destination has been visited:</p>
+
+    <div>
+      <!-- <input type="checkbox" id="visited" name="visited" checked> -->
+      <label for="true">Visited</label><input type="radio" id="true" name="visited" value="True"> <br>
+      <label for="false">Unvisited</label><input type="radio" id="false" name="visited" value="False"><br>
+    </div>
+
+  <input type='submit' value="Submit"/>
+</form>

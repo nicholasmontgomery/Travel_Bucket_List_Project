@@ -20,7 +20,10 @@ end
 # show /cities/:id
 
 get '/cities/new' do # new
+  @cities = City.all
+  @countries = Country.all
   erb(:"cities/new")
+  # redirect to("/cities")
 end
 
 post '/cities' do #create
