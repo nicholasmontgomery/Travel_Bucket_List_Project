@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Country
 
   attr_reader :id
-  attr_accessor :name
+  attr_accessor :name, :visited
 
   def initialize(options)
     @id = options['id'].to_i

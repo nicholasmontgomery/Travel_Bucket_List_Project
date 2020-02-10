@@ -1,0 +1,19 @@
+<p>Cities</p>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/cities/new">Add a new city</a>
+</p>
+
+<ul>
+  <% for city in @cities %>
+  <li>
+  <p> <%= city.name %>
+   <% if city.visited == 't' %>
+      <img src="green_tick.png" alt="green_tick">
+    <% else %>
+      <img src="red_cross.png" alt="red_cross">
+      </p>
+   <% end %>
+  </li>
+  <% end %>
+</ul>

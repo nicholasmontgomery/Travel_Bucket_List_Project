@@ -1,0 +1,19 @@
+<p>Continents</p>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/continents/new">Add a new continent</a>
+</p>
+
+<ul>
+  <% for continent in @continents %>
+  <li>
+  <p> <%= continent.name %>
+   <% if continent.visited == 't' %>
+      <img src="green_tick.png" alt="green_tick">
+    <% else %>
+      <img src="red_cross.png" alt="red_cross">
+      </p>
+   <% end %>
+  </li>
+  <% end %>
+</ul>

@@ -8,7 +8,7 @@ require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
-get '/cities' do
+get '/cities' do # index
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
@@ -17,17 +17,25 @@ get '/cities' do
   erb ( :"cities/index" )
 end
 
-get '/cities/new' do
+# show /cities/:id
+
+get '/cities/new' do # new
   erb(:"cities/new")
 end
 
-post '/cities' do
+post '/cities' do #create
   @city = City.new(params)
   @city.save
   redirect to("/cities")
 end
 
-post '/cities/:id/delete' do
+post '/cities/:id/delete' do #delete
   City.destroy(params[:id])
   redirect to("/cities")
 end
+
+# delete_all post
+
+# edit get form with pre-populated info
+
+# update post - fires when submit is clicked in edit

@@ -8,7 +8,7 @@ require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
-get '/continents' do
+get '/continents' do #index / is all the instance variables below needed?
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
@@ -17,17 +17,25 @@ get '/continents' do
   erb ( :"continents/index" )
 end
 
-get '/continents/new' do
+# show
+
+get '/continents/new' do #new
   erb(:"continents/new")
 end
 
-post '/continents' do
+post '/continents' do #create
   @continent = Continent.new(params)
   @continent.save
   redirect to("/continents")
 end
 
-post '/continents/:id/delete' do
+post '/continents/:id/delete' do #delete
   Continent.destroy(params[:id])
   redirect to("/continents")
 end
+
+#delete_all
+
+#edit
+
+#update

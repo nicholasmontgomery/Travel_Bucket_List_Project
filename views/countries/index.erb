@@ -1,0 +1,19 @@
+<p>Countries</p>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/countries/new">Add a new country</a>
+</p>
+
+<ul>
+  <% for country in @countries %>
+  <li>
+  <p> <%= country.name %>
+   <% if country.visited == 't' %>
+      <img src="public/green_tick" alt="green_tick">
+    <% else %>
+      <img src="public/red_cross" alt="red_cross">
+      </p>
+   <% end %>
+  </li>
+  <% end %>
+</ul>

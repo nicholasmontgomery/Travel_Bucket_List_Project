@@ -8,7 +8,7 @@ require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
-get '/countries' do
+get '/countries' do #index
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
@@ -17,17 +17,25 @@ get '/countries' do
   erb ( :"countries/index" )
 end
 
-get '/countries/new' do
+# show
+
+get '/countries/new' do #new
   erb(:"countries/new")
 end
 
-post '/countries' do
+post '/countries' do #create
   @country = Country.new(params)
   @country.save
   redirect to("/countries")
 end
 
-post '/continents/:id/delete' do
+post '/continents/:id/delete' do #delete
   Country.destroy(params[:id])
   redirect to("/countries")
 end
+
+# delete all
+
+# edit
+
+# update
