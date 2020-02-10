@@ -10,25 +10,20 @@ also_reload( '../models/*' )
 
 get '/visited' do
   @cities = City.visited
-  @continents = Continent.all
-  @countries = Country.all
-  @sights = Sight.all
-  @visits = Visit.all
+  # @continents = Continent.all
+  # @countries = Country.all
+  # @sights = Sight.all
+  # @visits = Visit.all
   erb ( :"visited/index" )
 end
 
 get '/visited/new' do
-  @cities = City.all
-  @continents = Continent.all
-  @countries = Country.all
-  @sights = Sight.all
-  @visits = Visit.all
   erb(:"visited/new")
 end
 
 post '/visited' do
-  visit = Visit.new(params)
-  visit.save
+  country = Country.new(params)
+  country.save
   redirect to("/visited")
 end
 
