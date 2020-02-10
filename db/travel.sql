@@ -6,12 +6,14 @@ DROP TABLE continents;
 
 CREATE TABLE continents (
   id SERIAL PRIMARY key,
-  name varchar(255)
+  name varchar(255),
+  visited boolean
 );
 
 CREATE TABLE countries (
   id SERIAL PRIMARY key,
   name varchar(255),
+  visited boolean,
   continent_id INT REFERENCES continents(id) NOT NULL
 );
 

@@ -13,25 +13,43 @@ Country.delete_all()
 Continent.delete_all()
 
 continent1 = Continent.new({
-  "name" => "Europe"
+  "name" => "Europe",
+  "visited" =>  true
   })
 
   continent1.save()
 
 continent2 = Continent.new({
-  "name" => "Africa"
+  "name" => "Africa",
+  "visited" =>  true
   })
 
   continent2.save()
 
 continent3 = Continent.new({
-  "name" => "Asia"
+  "name" => "Asia",
+  "visited" =>  true
   })
 
   continent3.save()
 
+continent4 = Continent.new({
+  "name" => "South America",
+  "visited" =>  false
+  })
+
+  continent4.save()
+
+continent5 = Continent.new({
+  "name" => "Antartica",
+  "visited" =>  false
+  })
+
+  continent5.save()
+
 country1 = Country.new({
   "name" => "France",
+  "visited" =>  true,
   "continent_id" => continent1.id
   })
 
@@ -39,6 +57,7 @@ country1 = Country.new({
 
 country2 = Country.new({
   "name" => "Kenya",
+  "visited" =>  true,
   "continent_id" => continent2.id
   })
 
@@ -46,6 +65,7 @@ country2 = Country.new({
 
 country3 = Country.new({
   "name" => "India",
+  "visited" =>  true,
   "continent_id" => continent3.id
   })
 

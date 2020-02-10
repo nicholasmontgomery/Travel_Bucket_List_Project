@@ -8,6 +8,7 @@ class Country
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @visited = options['visited']
     @continent_id = options['continent_id']
   end
 
@@ -15,12 +16,13 @@ class Country
   sql = "INSERT INTO countries
   (
     name,
+    visited,
     continent_id
     ) VALUES (
-      $1, $2
+      $1, $2, $3
       )
       RETURNING id"
-      values = [@name, @continent_id]
+      values = [@name, @visited, @continent_id]
     country = SqlRunner.run(sql, values).first
     @id = country['id'].to_i
   end

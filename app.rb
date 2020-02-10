@@ -1,7 +1,8 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
-require_relative('controllers/visited_controller')
-require_relative('controllers/wishlist_controller')
+require_relative('controllers/cities_controller')
+require_relative('controllers/countries_controller')
+require_relative('controllers/continents_controller')
 
 get '/' do
   erb( :index )

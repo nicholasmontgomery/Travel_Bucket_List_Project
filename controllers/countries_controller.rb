@@ -8,31 +8,26 @@ require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
-get '/wishlist' do
-  @cities = City.not_visited
-  @continents = Continent.all
-  @countries = Country.all
-  @sights = Sight.all
-  @visits = Visit.all
-  erb ( :"wishlist/index" )
-end
-
-get '/wishlist/new' do
+get '/countries' do
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
   @sights = Sight.all
   @visits = Visit.all
-  erb(:"wishlist/new")
+  erb ( :"countries/index" )
 end
 
-post '/wishlist' do
-  visit = Visit.new(params)
-  visit.save
-  redirect to("/wishlist")
+get '/countries/new' do
+  erb(:"countries/new")
 end
 
-post '/wishlist/:id/delete' do
-  Visit.destroy(params[:id])
-  redirect to("/wishlist")
+post '/countries' do
+  @country = Country.new(params)
+  @country.save
+  redirect to("/countries")
+end
+
+post '/continents/:id/delete' do
+  Country.destroy(params[:id])
+  redirect to("/countries")
 end
