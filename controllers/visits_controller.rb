@@ -1,4 +1,4 @@
-equire( 'sinatra' )
+require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( '../models/cities.rb' )
@@ -9,7 +9,7 @@ also_reload( '../models/*' )
 
 get '/visits' do
   @visits = Visit.all
-  erb (:"visits/index")
+  erb ( :"visits/index" )
 end
 
 get '/visits/new' do #new

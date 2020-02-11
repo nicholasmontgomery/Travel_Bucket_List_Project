@@ -2,25 +2,21 @@
 
 <table>
   <tr>
-    <th>City</th>
-    <th>Visited?</th>
-    <th>Delete</th>
+    <th>Date</th>
+    <th>Photo</th>
+    <th>Comment</th>
   </tr>
-  <% for city in @cities %>
+  <% for visit in @visits %>
   <tr>
-    <td> <%= city.name %> </td>
-    <% if city.visited == 't' %>
-       <td><img src="/green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
-     <% else %>
-       <td><img src="/red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
-    <% end %>
-    <td> <form action="/cities/<%= city.id %>/delete" method="POST">
-      <input class="city" type="submit" value="delete" />
+    <td> <%= visit.date_visited %> </td>
+    <td><img src="<%= visit.url %>" alt="photo" style="width:30px;height:30px;"></td>
+    <td> <form action="/visits/<%= visit.id %>/delete" method="POST">
+      <input class="visit" type="submit" value="delete" />
     </form> </td>
   </tr>
   <% end %>
 </table>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/cities/new">Add a new city</a>
+  <a class="btn btn--action" href="/cities/new">Add a new visit</a>
 </p>

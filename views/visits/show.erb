@@ -1,0 +1,26 @@
+<h1><%= @visit.name %></h1>
+
+<table>
+  <tr>
+    <th>City</th>
+    <th>Visited?</th>
+    <th>Delete</th>
+  </tr>
+  <% for city in @cities %>
+  <tr>
+    <td> <%= city.name %> </td>
+    <% if city.visited == 't' %>
+       <td><img src="/green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+     <% else %>
+       <td><img src="/red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+    <% end %>
+    <td> <form action="/cities/<%= city.id %>/delete" method="POST">
+      <input class="city" type="submit" value="delete" />
+    </form> </td>
+  </tr>
+  <% end %>
+</table>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/cities/new">Add a new city</a>
+</p>

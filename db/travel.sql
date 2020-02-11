@@ -1,4 +1,4 @@
--- DROP TABLE visits;
+DROP TABLE visits;
 DROP TABLE cities;
 DROP TABLE countries;
 DROP TABLE continents;
@@ -23,9 +23,10 @@ CREATE TABLE cities (
   country_id INT REFERENCES countries(id) ON DELETE CASCADE NOT NULL
 );
 
--- CREATE TABLE visits (
---   id SERIAL PRIMARY key,
---   visit_date varchar(255),
---   url text,
---   city_id INT REFERENCES cities(id) NOT NULL
--- );
+CREATE TABLE visits (
+  id SERIAL PRIMARY key,
+  visit_date varchar(255),
+  url text,
+  comment text,
+  city_id INT REFERENCES cities(id) NOT NULL
+);

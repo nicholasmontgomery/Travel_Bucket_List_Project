@@ -3,12 +3,13 @@ require_relative('../db/sql_runner')
 class Visit
 
   attr_reader :id
-  attr_accessor :visit_date, :url, :city_id
+  attr_accessor :visit_date, :url, :comment, :city_id
 
   def initialize(options)
     @id = options['id'].to_i
     @visit_date = options['visit_date']
     @url = options['url']
+    @comment = options['comment']
     @city_id = options['city_id']
   end
 
@@ -17,15 +18,16 @@ class Visit
   (
     visit_date,
     url,
+    comment,
     city_id
     ) VALUES (
-      $1, $2, $3
+      $1, $2, $3, $4
       )
       RETURNING id"
-      values = [@visit_date, @url, @city_id]
-  visit = SqlRunner.run(sql, values).first
-  @id = visit['id'].to_i
-end
+      values = [@visit_date, @url, @comment, @city_id]
+      visit = SqlRunner.run(sql, values).first
+      @id = visit['id'].to_i
+    end
 
   # def sight()
   #   sql = "SELECT * FROM sights WHERE id = $1"
