@@ -7,6 +7,10 @@
     <th>Visited?</th>
     <th>Delete</th>
   </tr>
+  <p class="btn--wrapper">
+    <a class="btn btn--action" href="/countries/new">Add a new country</a>
+  </p>
+  <% if @countries.length > 0 %>
   <% for country in @countries %>
   <tr>
     <td><a href="/countries/<%= country.id %>"><%= country.name %></a></td>
@@ -21,10 +25,10 @@
     </form> </td>
   </tr>
   <% end %>
+
 </table>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/countries/new">Add a new country</a>
-</p>
+
 
 <a href="/countries/<%= country.id %>/edit">Edit country</a>
+  <% end %>

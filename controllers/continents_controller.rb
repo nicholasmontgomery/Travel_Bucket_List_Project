@@ -11,7 +11,7 @@ get '/continents' do #index / is all the instance variables below needed?
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
-  @visits = Visit.all
+  # @visits = Visit.all
   erb ( :"continents/index" )
 end
 
@@ -32,7 +32,8 @@ post '/continents' do #create
 end
 
 post '/continents/:id/delete' do #delete
-  Continent.delete(params[:id])
+  continent = Continent.find( params['id'])
+  continent.delete
   redirect to("/continents")
 end
 

@@ -6,7 +6,7 @@ require_relative( "../models/visits.rb" )
 
 require("pry-byebug")
 
-Visit.delete_all()
+# Visit.delete_all()
 City.delete_all()
 Country.delete_all()
 Continent.delete_all()
@@ -109,30 +109,30 @@ city3 = City.new({
     })
 
     city5.save()
-
-visit1 = Visit.new({
-  "visit_date" => "22.08.17",
-  "url" => "/louvre.jpg",
-  "city_id" => city1.id
-  })
-
-  visit1.save()
-
-visit2 = Visit.new({
-  "visit_date" => "15.05.18",
-  "url" => "/nairobi_national_park.jpg",
-  "city_id" => city2.id
-  })
-
-  visit2.save()
-
-visit3 = Visit.new({
-  "visit_date" => "03.10.19",
-  "url" => "/red_fort.jpg",
-  "city_id" => city3.id
-  })
-
-  visit3.save()
+#
+# visit1 = Visit.new({
+#   "visit_date" => "22.08.17",
+#   "url" => "/louvre.jpg",
+#   "city_id" => city1.id
+#   })
+#
+#   visit1.save()
+#
+# visit2 = Visit.new({
+#   "visit_date" => "15.05.18",
+#   "url" => "/nairobi_national_park.jpg",
+#   "city_id" => city2.id
+#   })
+#
+#   visit2.save()
+#
+# visit3 = Visit.new({
+#   "visit_date" => "03.10.19",
+#   "url" => "/red_fort.jpg",
+#   "city_id" => city3.id
+#   })
+#
+#   visit3.save()
 
   binding.pry
   nil
