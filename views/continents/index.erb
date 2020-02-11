@@ -4,14 +4,22 @@
   <a class="btn btn--action" href="/continents/new">Add a new continent</a>
 </p>
 
+# create table not unordered list
+# show continents with list of countries
+
 <ul>
   <% for continent in @continents %>
   <li>
   <p> <%= continent.name %>
    <% if continent.visited == 't' %>
-      <img src="green_tick.png" alt="green_tick">
+      <img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;">
+      <form action="/continents/<%= continent.id %>/delete" method="POST">
+        <input class="continent" type="submit" value="delete" />
+      </form>
     <% else %>
-      <img src="red_cross.png" alt="red_cross">
+      <img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;">
+      <form action="/continents/<%= continent.id %>/delete" method="POST">
+        <input class="continent" type="submit" value="delete" />
       </p>
    <% end %>
   </li>

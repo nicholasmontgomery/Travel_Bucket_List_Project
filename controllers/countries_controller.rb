@@ -20,6 +20,7 @@ end
 # show
 
 get '/countries/new' do #new
+  @continents = Continent.all
   erb(:"countries/new")
 end
 
