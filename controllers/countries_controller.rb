@@ -39,6 +39,12 @@ end
 
 # delete all
 
-# edit
+get '/countries/:id/edit' do
+  @country = Country.find( params[:id] )
+  erb(:"countries/edit")
+end
 
-# update
+post '/countries/:id' do
+  Country.new( params ).update
+  redirect to '/countries'
+end

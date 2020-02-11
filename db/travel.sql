@@ -28,5 +28,5 @@ CREATE TABLE visits (
   visit_date varchar(255),
   url text,
   comment text,
-  city_id INT REFERENCES cities(id) NOT NULL
+  city_id INT REFERENCES cities(id) ON DELETE CASCADE NOT NULL
 );
