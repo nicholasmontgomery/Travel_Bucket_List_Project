@@ -78,4 +78,12 @@ def self.delete_all()
       SqlRunner.run(sql)
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM cities
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return City.new( results.first )
+  end
+
 end
