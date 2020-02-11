@@ -14,6 +14,7 @@ end
 
 get '/visits/new' do #new
   @visits = Visit.all
+  @cities = City.all
   erb(:"visits/new")
 end
 
@@ -31,4 +32,15 @@ end
 post '/visits/:id/delete' do #delete
   Visit.delete(params[:id])
   redirect to("/visits")
+end
+
+get '/visits/:id/edit' do
+  @visit = Visit.find( params[:id] )
+  @cities.all
+  erb(:"visits/edit")
+end
+
+post '/visits/:id' do
+  Visit.new( params ).update
+  redirect to '/visits'
 end

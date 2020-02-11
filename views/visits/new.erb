@@ -1,0 +1,23 @@
+<h1>Add a new visit</h1>
+
+<form action="/visits" method="post">
+  <label for="visit_date">Visit date:</label>
+    <input id="visit_date" type="text" name="visit_date" />
+
+    <label for="url">Picture Upload:</label>
+      <input id="url" type="text" name="url" />
+
+      <label for="comment">Comments:</label>
+        <input id="comments" type="text" name="comments" />
+
+    <label>
+      Select a city:
+      <select name="city_id">
+        <% for city in @cities %>
+        <option value="<%= city.id %>"><%= city.name %></option>
+        <% end %>
+      </select>
+    </label>
+
+  <input type='submit' value="Submit"/>
+</form>
