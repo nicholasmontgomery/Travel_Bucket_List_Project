@@ -18,7 +18,7 @@ end
 # show /cities/:id
 get '/cities/:id' do
   @city = City.find( params['id'])
-  @visits = @city.visits()
+  @visits = @city.visits
   erb(:"cities/show")
 end
 

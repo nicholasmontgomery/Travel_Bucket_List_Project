@@ -37,8 +37,8 @@ def country()
 end
 
 def visits()
-  sql = "SELECT * FROM visits WHERE id = $1"
-  values = [@city_id]
+  sql = "SELECT * FROM visits WHERE city_id = $1"
+  values = [@id]
   visits = SqlRunner.run(sql, values)
   result = visits.map{ |visit| Visit.new(visit)}
   return result
