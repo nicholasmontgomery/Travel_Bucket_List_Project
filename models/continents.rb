@@ -33,6 +33,21 @@ class Continent
     return result
   end
 
+  def update()
+    sql = "UPDATE continents
+    SET
+    (
+      name,
+      quantity
+    ) =
+    (
+      $1, $2
+    )
+    WHERE id = $3"
+    values = [@name, @visited]
+    SqlRunner.run( sql, values )
+  end
+
   def self.find( id )
     sql = "SELECT * FROM continents
     WHERE id = $1"

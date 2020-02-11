@@ -1,14 +1,10 @@
 <p>Continents</p>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/continents/new">Add a new continent</a>
-</p>
-
 <table>
   <tr>
     <th>Continent</th>
     <th>Visited?</th>
-    <th>Delete</th>
+    <th></th>
   </tr>
   <% for continent in @continents %>
   <tr>
@@ -24,3 +20,8 @@
   </tr>
   <% end %>
 </table>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/continents/new">Add a new continent</a>
+</p>
+<a href="/continents/<%= continent.id %>/edit">Edit continent</a>

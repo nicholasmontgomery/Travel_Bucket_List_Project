@@ -1,0 +1,19 @@
+<form action="/continents/<%= @continent.id %>" method="post">
+  <label for="name">Continent name:</label>
+    <input id="name" type="text" name="name" value="<%= @continent.name %>"/>
+
+    <p>Tick if this destination has been visited:</p>
+
+    <div>
+      <!-- <input type="checkbox" id="visited" name="visited" checked> -->
+      <% if @continent.visited == true%>
+      <label for="true">Visited</label><input type="radio" id="true" name="visited" value="True" checked="checked"><br>
+      <label for="false">Unvisited</label><input type="radio" id="false" name="visited" value="False"><br>
+      <% else %>
+      <label for="true">Visited</label><input type="radio" id="true" name="visited" value="True"><br>
+      <label for="false">Unvisited</label><input type="radio" id="false" name="visited" value="False" checked="checked"><br>
+      <% end %>
+    </div>
+
+  <input type='submit' value="Submit"/>
+</form>

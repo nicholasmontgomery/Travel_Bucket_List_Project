@@ -10,9 +10,9 @@
   <tr>
     <td> <%= city.name %> </td>
     <% if city.visited == 't' %>
-       <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+       <td><img src="/green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>
-       <td><img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+       <td><img src="/red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
     <% end %>
     <td> <form action="/cities/<%= city.id %>/delete" method="POST">
       <input class="city" type="submit" value="delete" />

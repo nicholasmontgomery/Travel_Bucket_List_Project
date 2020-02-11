@@ -40,6 +40,12 @@ end
 
 #delete_all
 
-#edit
+get '/continents/:id/edit' do
+  @continent = Continent.find( params[:id] )
+  erb(:"continents/edit")
+end
 
-#update
+post '/continents/:id' do
+  Continent.new( params ).update
+  redirect to '/continents'
+end
