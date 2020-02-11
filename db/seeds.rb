@@ -7,7 +7,6 @@ require_relative( "../models/visits.rb" )
 require("pry-byebug")
 
 Visit.delete_all()
-Sight.delete_all()
 City.delete_all()
 Country.delete_all()
 Continent.delete_all()
@@ -111,31 +110,9 @@ city3 = City.new({
 
     city5.save()
 
-sight1 = Sight.new({
-  "name" => "Louvre Museum",
-  "city_id" => city1.id
-  })
-
-  sight1.save()
-
-sight2 = Sight.new({
-  "name" => "Nairobi National Park",
-  "city_id" => city2.id
-  })
-
-  sight2.save()
-
-sight3 = Sight.new({
-  "name" => "Red Fort",
-  "city_id" => city3.id
-  })
-
-  sight3.save()
-
 visit1 = Visit.new({
   "visit_date" => "22.08.17",
   "url" => "/louvre.jpg",
-  "sight_id" => sight1.id,
   "city_id" => city1.id
   })
 
@@ -144,7 +121,6 @@ visit1 = Visit.new({
 visit2 = Visit.new({
   "visit_date" => "15.05.18",
   "url" => "/nairobi_national_park.jpg",
-  "sight_id" => sight2.id,
   "city_id" => city2.id
   })
 
@@ -153,7 +129,6 @@ visit2 = Visit.new({
 visit3 = Visit.new({
   "visit_date" => "03.10.19",
   "url" => "/red_fort.jpg",
-  "sight_id" => sight3.id,
   "city_id" => city3.id
   })
 

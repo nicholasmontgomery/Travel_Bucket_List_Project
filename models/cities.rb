@@ -36,6 +36,21 @@ def country()
   return country
 end
 
+def visits()
+  sql = "SELECT * FROM visits WHERE id = $1"
+  values = [@city_id]
+  visits = SqlRunner.run(sql, values)
+  result = visits.map{ |visit| Visit.new(visit)}
+  return result
+end
+
+def self.delete(id)
+  sql = "DELETE FROM cities
+  WHERE id = $1"
+  values = [id]
+  SqlRunner.run( sql, values )
+end
+
 def self.visited()
   sql = "SELECT * FROM cities WHERE visited = true"
   cities = SqlRunner.run(sql)

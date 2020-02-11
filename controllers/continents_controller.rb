@@ -4,7 +4,6 @@ require( 'pry-byebug' )
 require_relative( '../models/cities.rb' )
 require_relative( '../models/continents.rb' )
 require_relative( '../models/countries.rb' )
-require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
@@ -12,7 +11,6 @@ get '/continents' do #index / is all the instance variables below needed?
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
-  @sights = Sight.all
   @visits = Visit.all
   erb ( :"continents/index" )
 end
@@ -34,7 +32,7 @@ post '/continents' do #create
 end
 
 post '/continents/:id/delete' do #delete
-  Continent.destroy(params[:id])
+  Continent.delete(params[:id])
   redirect to("/continents")
 end
 

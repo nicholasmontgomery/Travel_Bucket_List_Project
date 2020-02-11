@@ -4,7 +4,6 @@ require( 'pry-byebug' )
 require_relative( '../models/cities.rb' )
 require_relative( '../models/continents.rb' )
 require_relative( '../models/countries.rb' )
-require_relative( '../models/sights.rb' )
 require_relative( '../models/visits.rb' )
 also_reload( '../models/*' )
 
@@ -33,7 +32,7 @@ post '/cities' do #create
 end
 
 post '/cities/:id/delete' do #delete
-  City.destroy(params[:id])
+  City.delete(params[:id])
   redirect to("/cities")
 end
 

@@ -1,5 +1,4 @@
 DROP TABLE visits;
-DROP TABLE sights;
 DROP TABLE cities;
 DROP TABLE countries;
 DROP TABLE continents;
@@ -22,19 +21,11 @@ CREATE TABLE cities (
   name varchar(255),
   visited boolean,
   country_id INT REFERENCES countries(id) NOT NULL
-
-);
-
-CREATE TABLE sights (
-  id SERIAL PRIMARY key,
-  name varchar(255),
-  city_id INT REFERENCES cities(id) NOT NULL
 );
 
 CREATE TABLE visits (
   id SERIAL PRIMARY key,
   visit_date varchar(255),
   url text,
-  sight_id INT REFERENCES sights(id) NOT NULL,
   city_id INT REFERENCES cities(id) NOT NULL
 );

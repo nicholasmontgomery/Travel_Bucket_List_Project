@@ -48,6 +48,13 @@ class Continent
     SqlRunner.run( sql, values )
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM continents
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
   def self.find( id )
     sql = "SELECT * FROM continents
     WHERE id = $1"
