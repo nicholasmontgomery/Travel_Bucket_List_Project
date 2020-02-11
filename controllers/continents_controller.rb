@@ -17,10 +17,14 @@ get '/continents' do #index / is all the instance variables below needed?
   erb ( :"continents/index" )
 end
 
-# show
-
 get '/continents/new' do #new
   erb(:"continents/new")
+end
+
+get '/continents/:id' do
+  @continent = Continent.find( params['id'])
+  @countries = @continent.country()
+  erb(:"continents/show")
 end
 
 post '/continents' do #create

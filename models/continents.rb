@@ -28,12 +28,18 @@ class Continent
   def country()
     sql = "SELECT * FROM countries WHERE continent_id = $1"
     values = [@id]
-    results = SqlRunner.run(sql, values)
-    continent_country = results[0]
-    country = Country.new(continent_country)
-    return country
+    countries = SqlRunner.run(sql, values)
+    result = countries.map{ |country| Country.new(country)}
+    return result
   end
 
+  def self.find( id )
+    sql = "SELECT * FROM continents
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Continent.new( results.first )
+  end
 
   def self.all()
     sql = "SELECT * FROM continents"

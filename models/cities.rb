@@ -50,6 +50,7 @@ def self.not_visited()
   return result
 end
 
+
 def self.all()
   sql = "SELECT * FROM cities"
   cities = SqlRunner.run(sql)

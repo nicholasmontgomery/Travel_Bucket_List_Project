@@ -36,6 +36,22 @@ class Country
     return continent
   end
 
+  def city
+    sql = "SELECT * FROM cities WHERE country_id = $1"
+    values = [@id]
+    cities = SqlRunner.run(sql, values)
+    result = cities.map{ |city| City.new(city)}
+    return result
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM countries
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Country.new( results.first )
+  end
+
   def self.all()
     sql = "SELECT * FROM countries"
     countries = SqlRunner.run(sql)

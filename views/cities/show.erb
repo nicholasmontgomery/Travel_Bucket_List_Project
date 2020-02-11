@@ -1,20 +1,14 @@
-<p>Cities</p>
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/cities/new">Add a new city</a>
-</p>
+<h1><%= @city.name %></h1>
 
 <table>
   <tr>
     <th>City</th>
-    <th>Country</th>
     <th>Visited?</th>
     <th>Delete</th>
   </tr>
   <% for city in @cities %>
   <tr>
     <td> <%= city.name %> </td>
-    <td><a href="/countries/<%= city.country.id %>"><%= city.country.name %></a></td>
     <% if city.visited == 't' %>
        <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>
@@ -26,3 +20,7 @@
   </tr>
   <% end %>
 </table>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/cities/new">Add a new city</a>
+</p>

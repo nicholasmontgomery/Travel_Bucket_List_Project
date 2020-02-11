@@ -13,8 +13,8 @@
   </tr>
   <% for country in @countries %>
   <tr>
-    <td> <%= country.name %> </td>
-    <td> <%= country.continent.name %> </td>
+    <td><a href="/countries/<%= country.id %>"><%= country.name %></a></td>
+    <td><a href="/continents/<%= country.continent.id %>"><%= country.continent.name %></a></td>
     <% if country.visited == 't' %>
        <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>

@@ -17,8 +17,6 @@ get '/countries' do #index
   erb ( :"countries/index" )
 end
 
-# show
-
 get '/countries/new' do #new
   @continents = Continent.all
   erb(:"countries/new")
@@ -28,6 +26,12 @@ post '/countries' do #create
   @country = Country.new(params)
   @country.save
   redirect to("/countries")
+end
+
+get '/countries/:id' do
+  @country = Country.find( params['id'])
+  @cities = @country.city()
+  erb(:"countries/show")
 end
 
 post '/continents/:id/delete' do #delete

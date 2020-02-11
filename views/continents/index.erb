@@ -1,7 +1,7 @@
 <p>Continents</p>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/continents/new">Create a new continent</a>
+  <a class="btn btn--action" href="/continents/new">Add a new continent</a>
 </p>
 
 <table>
@@ -12,7 +12,7 @@
   </tr>
   <% for continent in @continents %>
   <tr>
-    <td> <%= continent.name %> </td>
+    <td><a href="/continents/<%= continent.id %>"><%= continent.name %></a></td>
     <% if continent.visited == 't' %>
        <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>
