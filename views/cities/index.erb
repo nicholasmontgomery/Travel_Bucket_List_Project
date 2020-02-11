@@ -4,22 +4,25 @@
   <a class="btn btn--action" href="/cities/new">Add a new city</a>
 </p>
 
-<ul>
+<table>
+  <tr>
+    <th>City</th>
+    <th>Country</th>
+    <th>Visited?</th>
+    <th>Delete</th>
+  </tr>
   <% for city in @cities %>
-  <li>
-  <p> <%= city.name %>
-   <% if city.visited == 't' %>
-      <img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;">
-      <form action="/cities/<%= city.id %>/delete" method="POST">
-        <input class="city" type="submit" value="delete" />
-      </form>
-    <% else %>
-      <img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;">
-      <form action="/cities/<%= city.id %>/delete" method="POST">
-        <input class="city" type="submit" value="delete" />
-      </form>
-      </p>
-   <% end %>
-  </li>
+  <tr>
+    <td> <%= city.name %> </td>
+    <td> <%= city.country.name %> </td>
+    <% if city.visited == 't' %>
+       <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+     <% else %>
+       <td><img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+    <% end %>
+    <td> <form action="/cities/<%= city.id %>/delete" method="POST">
+      <input class="city" type="submit" value="delete" />
+    </form> </td>
+  </tr>
   <% end %>
-</ul>
+</table>

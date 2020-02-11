@@ -1,27 +1,26 @@
 <p>Continents</p>
 
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/continents/new">Add a new continent</a>
+  <a class="btn btn--action" href="/continents/new">Create a new continent</a>
 </p>
 
-# create table not unordered list
-# show continents with list of countries
-
-<ul>
+<table>
+  <tr>
+    <th>Continent</th>
+    <th>Visited?</th>
+    <th>Delete</th>
+  </tr>
   <% for continent in @continents %>
-  <li>
-  <p> <%= continent.name %>
-   <% if continent.visited == 't' %>
-      <img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;">
-      <form action="/continents/<%= continent.id %>/delete" method="POST">
-        <input class="continent" type="submit" value="delete" />
-      </form>
-    <% else %>
-      <img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;">
-      <form action="/continents/<%= continent.id %>/delete" method="POST">
-        <input class="continent" type="submit" value="delete" />
-      </p>
-   <% end %>
-  </li>
+  <tr>
+    <td> <%= continent.name %> </td>
+    <% if continent.visited == 't' %>
+       <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+     <% else %>
+       <td><img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+    <% end %>
+    <td> <form action="/continents/<%= continent.id %>/delete" method="POST">
+      <input class="continent" type="submit" value="delete" />
+    </form> </td>
+  </tr>
   <% end %>
-</ul>
+</table>
