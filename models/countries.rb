@@ -27,6 +27,22 @@ class Country
     @id = country['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE countries
+    SET
+    (
+      name,
+      visited,
+      continent_id
+    ) =
+    (
+      $1, $2, $3
+    )
+    WHERE id = $4"
+    values = [@name, @visited, @continent_id]
+    SqlRunner.run( sql, values )
+  end
+
   def continent()
     sql = "SELECT * FROM continents WHERE id = $1"
     values = [@continent_id]

@@ -15,5 +15,14 @@
       <% end %>
     </div>
 
+    <label>
+      Select a continent:
+      <select name="continent_id">
+        <% for continent in @continents %>
+        <option value="<%= continent.id %>"><%= continent.name %></option>
+        <% end %>
+      </select>
+    </label>
+
   <input type='submit' value="Submit"/>
 </form>

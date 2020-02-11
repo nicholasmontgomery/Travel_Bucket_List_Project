@@ -41,6 +41,7 @@ end
 
 get '/countries/:id/edit' do
   @country = Country.find( params[:id] )
+  @continents = Continent.all
   erb(:"countries/edit")
 end
 
