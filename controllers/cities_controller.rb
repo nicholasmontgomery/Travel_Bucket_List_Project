@@ -11,7 +11,6 @@ get '/cities' do # index
   @cities = City.all
   @continents = Continent.all
   @countries = Country.all
-  @sights = Sight.all
   @visits = Visit.all
   erb ( :"cities/index" )
 end
