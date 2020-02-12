@@ -40,6 +40,11 @@ post '/cities/:id/delete' do #delete
   redirect to("/cities")
 end
 
+post '/cities/:city_id/delete/countries/:country_id' do #delete
+  City.delete(params[:city_id])
+  redirect to("/countries/#{params[:country_id]}")
+end
+
 get '/cities/:id/edit' do
   @city = City.find( params[:id] )
   @countries = Country.all

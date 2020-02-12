@@ -1,23 +1,71 @@
-.topnav {
-  background-color: #333;
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
+  background-color: #333;
 }
 
-.topnav a {
+li {
   float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
 }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
+li a {
+  display: block;
   color: white;
+  text-align: center;
+  padding: 14px 40px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+body {
+  background-image: url("world_atlas2.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500px 1000px;
+  }
+
+  }
+
+  #mapgif {
+    width:1000px;
+     margin: 0 auto;
+  }
+
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+
+h1 {
+   font-family: Georgia, serif;
+   font-size: 28px;
+   font-weight: bold;
+   color: white;
+   letter-spacing: 1.4px;
+   border-bottom: solid 1px white;
+   text-transform: uppercase;
+   margin: 50px auto
+}
+
+h2 {
+   font-family: Georgia, serif;
+   font-size: 28px;
+   font-weight: bold;
+   color: white;
+   letter-spacing: 1.4px;
+   border-bottom: solid 1px white;
+   text-transform: uppercase;
+   margin: 50px auto
+}
+
+
+h3, h4, h5, h6 {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }

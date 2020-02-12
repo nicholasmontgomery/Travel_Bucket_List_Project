@@ -49,3 +49,8 @@ post '/countries/:id' do
   Country.new( params ).update
   redirect to '/countries'
 end
+
+post '/countries/:country_id/delete/continents/:continent_id' do #delete
+  Country.delete(params[:country_id])
+  redirect to("/continents/#{params[:continent_id]}")
+end

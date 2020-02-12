@@ -1,3 +1,4 @@
+
 <h1><%= @country.name %></h1>
 
 <table>
@@ -14,7 +15,7 @@
      <% else %>
        <td><img src="/red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
     <% end %>
-    <td> <form action="/cities/<%= city.id %>/delete" method="POST">
+    <td> <form action="/cities/<%= city.id %>/delete/countries/<%= @country.id %>" method="POST">
       <input class="city" type="submit" value="delete" />
     </form> </td>
   </tr>
