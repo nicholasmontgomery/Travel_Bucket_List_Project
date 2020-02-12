@@ -10,7 +10,7 @@
   <% for visit in @visits %>
   <tr>
     <td> <%= visit.visit_date %> </td>
-    <td><img src="<%= visit.url %>" alt="photo" style="width:30px;height:30px;"></td>
+    <td><img class='holiday_pic' src="<%= visit.url %>" alt="photo"></td>
     <td> <%= visit.comment %> </td>
     <td> <form action="/visits/<%= visit.id %>/delete" method="POST">
       <input class="visit" type="submit" value="delete" />
