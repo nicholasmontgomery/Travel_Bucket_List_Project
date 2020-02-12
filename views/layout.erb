@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+
   <title>The Travel Bucketlist</title>
-  <nav>
+  <!-- <nav>
     <ul>
       <li>
         <a href="/continents">Continents</a>
@@ -14,7 +17,15 @@
         <a href="/cities">Cities</a>
       </li>
     </ul>
-  </nav>
+  </nav> -->
+
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
+    <a href="/continents">Continents</a>
+    <a href="/countries">Countries</a>
+    <a href="/cities">Cities</a>
+  </div>
+
   <section id="content">
   <%= yield %>
   </section>

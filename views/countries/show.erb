@@ -8,7 +8,7 @@
   </tr>
   <% for city in @cities %>
   <tr>
-    <td> <%= city.name %> </td>
+    <td> <a href="/cities/<%= city.id %>"><%= city.name %></a> </td>
     <% if city.visited == 't' %>
        <td><img src="/green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>

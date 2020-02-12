@@ -46,6 +46,20 @@ continent5 = Continent.new({
 
   continent5.save()
 
+continent6 = Continent.new({
+  "name" => "North America",
+  "visited" =>  false
+  })
+
+  continent6.save()
+
+continent7 = Continent.new({
+  "name" => "Australasia",
+  "visited" =>  false
+  })
+
+  continent7.save()
+
 country1 = Country.new({
   "name" => "France",
   "visited" =>  true,
