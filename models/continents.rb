@@ -38,13 +38,13 @@ class Continent
     SET
     (
       name,
-      quantity
+      visited
     ) =
     (
       $1, $2
     )
     WHERE id = $3"
-    values = [@name, @visited]
+    values = [@name, @visited, @id]
     SqlRunner.run( sql, values )
   end
 

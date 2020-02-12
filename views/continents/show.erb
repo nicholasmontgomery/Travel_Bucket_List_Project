@@ -1,11 +1,9 @@
 <h1><%= @continent.name %>
 
-
 <table>
   <tr>
     <th>Country</th>
     <th>Visited?</th>
-    <th>Delete</th>
   </tr>
   <% for country in @countries %>
   <tr>
@@ -25,4 +23,5 @@
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/countries/new">Add a new country</a>
 </p>
+
 <a href="/continents/<%= @continent.id %>/edit">Edit continent</a>
