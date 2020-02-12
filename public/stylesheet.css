@@ -73,17 +73,22 @@ p, div {
 /* Table stuff */
 
 table {
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: Georgia, serif;
   border-collapse: collapse;
   width: 100%;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
 
 table td, table th {
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   padding: 8px;
+  text-decoration: none;
+  background-color: #333
 }
 
-table tr:nth-child(even){background-color: #f2f2f2;}
+/* table tr:nth-child(even){background-color: #f2f2f2;} */
 
 table tr:hover {background-color: #ddd;}
 
@@ -91,6 +96,44 @@ table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: Georgia, serif;
+}
+
+#continent_table {
+  width: 50%;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+
+.world_map {
+  height: 600px;
+  width: 800px;
+  padding-left: 100px;
+  padding-top: 20px
+}
+
+.button {
+    display: block;
+    width: 100px;
+    height: 42px;
+    background: #333;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 20px
+}
+
+.cross {
+  height: 100px;
+  width: 100px;
 }

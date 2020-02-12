@@ -75,4 +75,12 @@ class Continent
     SqlRunner.run(sql)
   end
 
+  def self.get_route(name)
+    sql = "SELECT * FROM continents
+    WHERE name = $1"
+    values = [name]
+    result = SqlRunner.run( sql, values )[0]
+    id = result['id']
+    return "/continents/#{id}"
+  end
 end

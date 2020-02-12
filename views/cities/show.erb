@@ -5,6 +5,7 @@
     <th>Date</th>
     <th>Photo</th>
     <th>Comment</th>
+    <th>Delete</th>
   </tr>
   <% for visit in @visits %>
   <tr>
@@ -18,8 +19,7 @@
   <% end %>
 </table>
 
-<a href="/cities/<%= @city.id %>/edit">Edit city</a>
+<a class="button" href="/cities/<%= @city.id %>/edit">Edit city</a>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/visits/new">Add a new visit</a>
-</p>
+
+<a class="button" href="/visits/new">Add a new visit</a>

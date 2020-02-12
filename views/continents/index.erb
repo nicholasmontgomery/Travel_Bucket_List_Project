@@ -1,18 +1,17 @@
 <h2>Continents</h2>
 
-<table>
+<table id='continent_table'>
   <tr>
     <th>Continent</th>
-    <th>Visited?</th>
-    <th></th>
+    <th>Visited (✓) or Wishlist (✗)?</th>
   </tr>
   <% for continent in @continents %>
   <tr>
     <td><a href="/continents/<%= continent.id %>"><%= continent.name %></a></td>
     <% if continent.visited == 't' %>
-       <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+       <td><img src="tick.svg" alt="tick" style="width:30px;height:30px;"></td>
      <% else %>
-       <td><img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+       <td><img src="cross.svg" alt="cross" style="width:30px;height:30px;"></td>
     <% end %>
   </tr>
   <% end %>

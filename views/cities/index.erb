@@ -1,14 +1,10 @@
 <h2>Cities</h2>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/cities/new">Add a new city</a>
-</p>
-
 <table>
   <tr>
     <th>City</th>
     <th>Country</th>
-    <th>Visited?</th>
+    <th>Visited (✓) or Wishlist (✗)?</th>
     <th>Delete</th>
   </tr>
   <% for city in @cities %>
@@ -16,9 +12,9 @@
     <td><a href="/cities/<%= city.id %>"><%= city.name %></a></td>
     <td><a href="/countries/<%= city.country.id %>"><%= city.country.name %></a></td>
     <% if city.visited == 't' %>
-       <td><img src="green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+       <td><img src="tick.svg" alt="green_tick" style="width:30px;height:30px;"></td>
      <% else %>
-       <td><img src="red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+       <td><img src="cross.svg" alt="cross" style="width:30px;height:30px;"></td>
     <% end %>
     <td> <form action="/cities/<%= city.id %>/delete" method="POST">
       <input class="city" type="submit" value="delete" />
@@ -26,3 +22,7 @@
   </tr>
   <% end %>
 </table>
+
+<p>
+  <a class="button" href="/cities/new">Add a new city</a>
+</p>

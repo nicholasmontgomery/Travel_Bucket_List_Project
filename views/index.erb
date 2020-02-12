@@ -1,11 +1,13 @@
 <h1>The Travel Bucket List</h1>
 
-<!-- <img src="worldgif.gif" alt="WorldGIF" usemap="#workmap" id="mapgif"> -->
+<img src="hiclipart.com.png"alt="world" class="world_map" usemap="world-map">
 
-
-
-<map name="workmap">
-  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
-  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
-  <area shape="circle" coords="337,300,44" alt="Coffee" href="coffee.htm">
+<map name="world_map" id="world-map">
+  <a href="<%= Continent.get_route('Europe') %>"><area shape="circle" coords="0, 100, 100" alt="Europe" href="/red_fort.jpg"></a>
+  <a href="<%= Continent.get_route('Asia') %>"><area shape="circle" coords="290,172,333,250" alt="Asia" ></a>
+  <area shape="circle" coords="337,300,44" alt="Africa" href="/red_fort.jpg">
+  <area shape="circle" coords="337,300,44" alt="North America" href="<%= Continent.get_route('North America') %>">
+  <area shape="circle" coords="337,300,44" alt="South America" href="<%= Continent.get_route('South America') %>">
+  <area shape="circle" coords="337,300,44" alt="Australasia" href="<%= Continent.get_route('Australasia') %>">
+  <area shape="circle" coords="337,300,44" alt="Antartica" href="<%= Continent.get_route('Antartica') %>">
 </map>

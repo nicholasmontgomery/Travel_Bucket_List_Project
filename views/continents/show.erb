@@ -3,15 +3,16 @@
 <table>
   <tr>
     <th>Country</th>
-    <th>Visited?</th>
+    <th>Visited (✓) or Wishlist (✗)?</th>
+    <th>Delete</th>
   </tr>
   <% for country in @countries %>
   <tr>
     <td> <a href="/countries/<%= country.id %>"><%= country.name %></a> </td>
     <% if country.visited == 't' %>
-       <td><img src="/green_tick.png" alt="green_tick" style="width:30px;height:30px;"></td>
+       <td><img src="/tick.svg" alt="tick" style="width:30px;height:30px;"></td>
      <% else %>
-       <td><img src="/red_cross.png" alt="red_cross" style="width:30px;height:30px;"></td>
+       <td><img src="/cross.svg" alt="cross" style="width:30px;height:30px;"></td>
     <% end %>
     <td> <form action="/countries/<%= country.id %>/delete/continents/<%= @continent.id %>" method="POST">
       <input class="country" type="submit" value="delete" />
@@ -20,8 +21,7 @@
   <% end %>
 </table>
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/countries/new">Add a new country</a>
+  <a class="button" href="/countries/new">Add a new country</a>
 </p>
 
-<a href="/continents/<%= @continent.id %>/edit">Edit continent</a>
+<a class="button" href="/continents/<%= @continent.id %>/edit">Edit continent</a>
